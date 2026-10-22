@@ -55,7 +55,7 @@ def describe_data(ratings: pd.DataFrame) -> None:
 
     RESULTS_DIR.mkdir(exist_ok=True)
     fig, axes = plt.subplots(1, 2, figsize=(9, 3))
-    ratings["rating"].value_counts().sort_index().plot.bar(ax=axes[0])
+    ratings["rating"].value_counts().sort_index().plot.bar(ax=axes[0], rot=0)
     axes[0].set(title="rating distribution", xlabel="stars", ylabel="count")
     axes[1].hist(per_user, bins=50, log=True)
     axes[1].set(title="ratings per user", xlabel="ratings", ylabel="users (log)")
